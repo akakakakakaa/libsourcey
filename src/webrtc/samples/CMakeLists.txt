@@ -2,6 +2,7 @@ if(HAVE_WEBRTC)
   if(HAVE_FFMPEG)
     add_subdirectory(webrtcstreamer)
     add_subdirectory(webrtcrecorder)
+    add_subdirectory(webrtcencodestreamer)
   endif()
   add_subdirectory(webrtccapturer)
 
