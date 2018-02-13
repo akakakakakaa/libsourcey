@@ -33,7 +33,7 @@ namespace scy {
 class Signaler : public wrtc::PeerManager, public Application
 {
 public:
-    Signaler(const smpl::Client::Options& options, const av::EncoderOptions& encoderOptions);
+    Signaler(const smpl::Client::Options& options, std::shared_ptr<av::MultiplexPacketEncoder> encoder);
     ~Signaler();
 
     void startStreaming(const std::string& file, bool loop = true);

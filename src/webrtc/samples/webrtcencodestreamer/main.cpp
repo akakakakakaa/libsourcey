@@ -63,7 +63,8 @@ int main(int argc, char** argv)
         options.user = "videoserver";
 
 	scy::av::EncoderOptions encoderOptions;	
-
+	std::shared_ptr<av::MultiplexPacketEncoder> encoder = 
+		std::make_shared<av::MultiplexPacketEncoder>(encoderOptions);
         // NOTE: The server must enable anonymous
         // authentication for this test.
         // options.token = ""; token based authentication
@@ -82,7 +83,7 @@ int main(int argc, char** argv)
             }
         }
 
-        Signaler app(options, encoderOptions);
+        Signaler app(options, encoder);
         app.startStreaming(sourceFile, true);
 
         // Process WebRTC threads on the main loop.

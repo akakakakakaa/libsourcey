@@ -24,9 +24,9 @@ using std::endl;
 namespace scy {
 
 
-Signaler::Signaler(const smpl::Client::Options& options, const av::EncoderOptions& encoderOptions)
+Signaler::Signaler(const smpl::Client::Options& options, std::shared_ptr<av::MultiplexPacketEncoder> encoder)
     : _client(options)
-    , _encoder(std::make_shared<av::MultiplexPacketEncoder>(encoderOptions))
+    , _encoder(encoder)
     , _audioModule(wrtc::AudioPacketModule::Create())
     , _context(_audioModule)
 {

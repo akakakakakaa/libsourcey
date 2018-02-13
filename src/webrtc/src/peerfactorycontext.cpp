@@ -17,7 +17,6 @@
 #include "webrtc/api/peerconnectionfactoryproxy.h"
 #include "webrtc/api/peerconnectionproxy.h"
 #include "webrtc/api/audio_codecs/builtin_audio_decoder_factory.h"
-#include "webrtc/modules/audio_coding/codecs/builtin_audio_encoder_factory.h"
 #include "webrtc/p2p/base/basicpacketsocketfactory.h"
 #include "webrtc/p2p/client/basicportallocator.h"
 #include "webrtc/pc/peerconnection.h"
